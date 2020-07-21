@@ -1,5 +1,10 @@
-// typical mirage config export
+import { inflections } from 'inflected';
+
 export default function config() {
+  inflections('en', function (inflect) {
+    inflect.irregular('campus', 'campus');
+  });
+
   this.get('/service-points', function (schema) {
     return schema.servicePoints.all();
   });
