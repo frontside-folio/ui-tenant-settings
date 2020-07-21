@@ -8,10 +8,10 @@ describe('ServicePointCreate', () => {
   setupApplication();
   let servicePoint;
 
-  beforeEach(async function () {
-    servicePoint = await this.server.create('servicePoint');
-    await this.visit(`/settings/tenant-settings/servicePoints/${servicePoint.id}?layer=edit`);
-    await this.visit('/settings/tenant-settings/servicePoints?layer=add', () => {
+  beforeEach(function () {
+    servicePoint = this.server.create('servicePoint');
+    this.visit(`/settings/tenant-settings/servicePoints/${servicePoint.id}?layer=edit`);
+    return this.visit('/settings/tenant-settings/servicePoints?layer=add', () => {
       expect(ServicePointCreatePage.$root).to.exist;
     });
   });

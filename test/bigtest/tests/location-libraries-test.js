@@ -18,8 +18,8 @@ describe('LocationLibraries', () => {
   });
 
   describe('Institution is present', () => {
-    beforeEach(async function () {
-      institution = await this.server.create('institution');
+    beforeEach(function () {
+      institution = this.server.create('institution');
       return this.visit('/settings/tenant-settings/location-libraries');
     });
 

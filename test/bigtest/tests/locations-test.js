@@ -18,7 +18,7 @@ describe('Locations', () => {
   const getCellContent = (row, cell) => locations.list.rows(row).cells(cell).content;
 
   beforeEach(async function () {
-    await this.visit('/settings/tenant-settings/location-locations');
+    this.visit('/settings/tenant-settings/location-locations');
     await locations.whenLoaded();
   });
 

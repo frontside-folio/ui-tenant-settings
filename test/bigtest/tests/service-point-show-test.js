@@ -8,8 +8,8 @@ describe('ServicePointShow', () => {
   let servicePoint;
 
   describe('displaying staff slip', () => {
-    beforeEach(async function () {
-      servicePoint = await this.server.create('servicePoint');
+    beforeEach(function () {
+      servicePoint = this.server.create('servicePoint');
       return this.visit(`/settings/tenant-settings/servicePoints/${servicePoint.id}`);
     });
 
@@ -20,8 +20,8 @@ describe('ServicePointShow', () => {
   });
 
   describe('showing hold shelf expiry period', () => {
-    beforeEach(async function () {
-      servicePoint = await this.server.create('servicePoint', {
+    beforeEach(function () {
+      servicePoint = this.server.create('servicePoint', {
         pickupLocation: true,
         holdShelfExpiryPeriod: {
           duration: 2,
