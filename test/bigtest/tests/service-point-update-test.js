@@ -10,7 +10,7 @@ describe('ServicePointUpdate', () => {
 
   beforeEach(function () {
     servicePoint = this.server.create('servicePoint');
-    return this.visit(`/settings/tenant-settings/servicePoints/${servicePoint.id}?layer=edit`, () => {
+    this.visit(`/settings/tenant-settings/servicePoints/${servicePoint.id}?layer=edit`, () => {
       expect(ServicePointUpdatePage.$root).to.exist;
     });
   });

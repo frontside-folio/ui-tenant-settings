@@ -9,7 +9,7 @@ describe('Language and localization', () => {
   const lal = new LanguageAndLocalization();
 
   beforeEach(function () {
-    return this.visit('/settings/tenant-settings/locale');
+    this.visit('/settings/tenant-settings/locale');
   });
 
   it('should be present', () => {
