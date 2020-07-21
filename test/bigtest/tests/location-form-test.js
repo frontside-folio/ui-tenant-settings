@@ -15,8 +15,8 @@ describe('LocationForm', () => {
 
   describe('Name field', () => {
     beforeEach(async function () {
-      this.server.create('location');
-      this.visit('/settings/tenant-settings/location-locations?layer=add');
+      await this.server.create('location');
+      await this.visit('/settings/tenant-settings/location-locations?layer=add');
       await LocationForm.whenLoaded();
     });
 

@@ -8,7 +8,7 @@ describe('Addresses', () => {
   const addresses = new Addresses();
 
   beforeEach(function () {
-    this.visit('/settings/tenant-settings/addresses');
+    return this.visit('/settings/tenant-settings/addresses');
   });
 
   it('should be present', () => {

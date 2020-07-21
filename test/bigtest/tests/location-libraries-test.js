@@ -9,7 +9,7 @@ describe('LocationLibraries', () => {
 
   describe('Institution is not present', () => {
     beforeEach(function () {
-      this.visit('/settings/tenant-settings/location-libraries');
+      return this.visit('/settings/tenant-settings/location-libraries');
     });
 
     it('does not show institution select', () => {
@@ -18,9 +18,9 @@ describe('LocationLibraries', () => {
   });
 
   describe('Institution is present', () => {
-    beforeEach(function () {
-      institution = this.server.create('institution');
-      this.visit('/settings/tenant-settings/location-libraries');
+    beforeEach(async function () {
+      institution = await this.server.create('institution');
+      return this.visit('/settings/tenant-settings/location-libraries');
     });
 
     it('shows institution select', () => {
